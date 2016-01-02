@@ -1,0 +1,58 @@
+<?php
+include 'conn.php';
+if (isset($_POST['MN']))
+{
+echo $mobile_number=substr($_POST['mobile_number'],1);
+$name=$_POST['name'];
+$lname=$_POST['lname'];
+$position=$_POST['position'];
+$address=$_POST['address'];
+$contact_number=$_POST['contact_number'];
+$stado=$_POST['stado'];
+mysql_query("Insert into contact (name, lname, position, address,mobile_number,stado) values ('$name', '$lname', '$position', '$address','+63$mobile_number','Registered')") or die(mysql_error());
+header('Location:index.php');
+}
+
+$sql = mysql_query('Select * from inbox') or die (mysql_error());
+$count3 = mysql_num_rows($sql);
+$result = mysql_query($sql);
+while($row = mysql_fetch_array($sql))
+{
+     $tagapasa = $row['sender'];
+     $mensahi = $row['msg'];
+}
+
+$sql2 = mysql_query("Select * from contact where mobile_number='$tagapasa'") or die (mysql_error());
+$count2 = mysql_num_rows($sql2);
+$result2 = mysql_query($sql2);
+ $count2;
+if($count3 != 0)
+{
+		if($count2 != 0)
+		{	
+				if($mensahi == 'Off')
+				{	
+				echo "Shutdown";
+				exec('shutdown.bat');
+				mysql_query("Delete from inbox") or die (mysql_error());
+				}
+				else
+				{
+				echo "Sala ang text";
+				mysql_query("Delete from inbox") or die (mysql_error());
+				}
+		
+		}
+		else
+		{
+		echo "indi registered";
+		mysql_query("Delete from inbox") or die (mysql_error());
+		}
+}
+else
+{
+echo "wala text";
+mysql_query("Delete from inbox") or die (mysql_error());
+}
+
+?>

@@ -1,0 +1,85 @@
+
+
+* {
+	margin: 0;
+	padding: 0px;
+}
+body {
+	padding: 50px;
+	background: white;
+	text-align: center;
+	font-family: times new romans;
+	font-size: 14px;
+	color: dackblue;
+}
+.container {
+	width: 1190spx;
+	height: auto;
+	background: lightgreen;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: auto;
+	text-align: left;
+}
+.header {
+	padding: 20px;
+}
+.main_title {
+
+	background: darkgreen;
+	color: lightgreen;
+	padding: 9px;
+	font-size: 26px;
+	line-height: 25px;
+}
+.content {
+	padding: 10px;
+	min-height: 100px;
+}
+.footer {
+	padding: 10px;
+	text-align: right;
+}
+.footer a {
+	color: Green;
+	text-decoration: none;
+}
+.footer a:hover {
+	text-decoration: underline;
+}
+.label_div {
+	width: 120px;
+	float: left;
+	line-height: 28px;
+}
+.input_container {
+	height: 30px;
+	float: left;
+}
+.input_container input {
+
+	height: 30px;
+	width: 220px;
+	padding: 3px;
+	border: .10px solid darkblue;
+	border-radius: 0;
+}
+.input_container ul {
+	width: 219px;
+	border: 1px solid lightblue;
+	position: absolute;
+	z-index: 9;
+	background: lightgray;
+	list-style: none;
+}
+.input_container ul li {
+	padding: 2px;
+}
+.input_container ul li:hover {
+	background: lightblue;
+}
+#country_list_id {
+	display: none;
+}
+
+

@@ -1,0 +1,8 @@
+				
+$sql3="SELECT * FROM inbox";
+$result3=mysql_query($sql);
+{
+$sender=$row['sender'];
+$msg=$row['msg'];
+$id=$row['id'];
+$sql3="INSERT INTO outbox(id, receiver, msg, senttime, status) VALUES ('$id', '$sender',' Your computer is not shutdown because your key word $msg is invalid.  ---Your right key word is Off. ','$time','send')";
